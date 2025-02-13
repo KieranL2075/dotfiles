@@ -1,0 +1,52 @@
+// __        __          _                 
+// \ \      / /_ _ _   _| |__   __ _ _ __  
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
+//   \ V  V / (_| | |_| | |_) | (_| | |    
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
+//                 |___/                   
+//  
+// by Stephan Raabe (2023) 
+// ----------------------------------------------------- 
+//
+{
+    // General Settings
+    "position":"bottom",
+    "layer": "top",
+    "margin-bottom":0,
+    "margin-left": 0,
+    "margin-right": 0,   
+    "margin-top":0,
+    "spacing": 0,
+
+    // Load Modules
+    
+    "include": ["/home/Kieran/dotfiles/waybar/themes/Custom/modules.json"],
+    
+
+    // Modules Left
+    "modules-left": [
+        
+        "custom/workspace",
+        "custom/minimise"
+        
+    ],
+    
+
+    // Modules Center
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    // Modules Right    
+    "modules-right": [
+        "group/links",
+        "group/settings",
+        "backlight",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "custom/exit",
+        "battery",
+        "clock",
+    ]
+}

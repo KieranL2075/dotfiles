@@ -1,0 +1,10 @@
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+    font:                        "JetBrainsMono Nerd Font 20";
+}
+
+@theme "~/dotfiles/rofi/themes/theme.rasi"
+
+@theme "~/dotfiles/rofi/launchers/type-1/style-3.rasi"

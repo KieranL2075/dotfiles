@@ -1,0 +1,510 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+ * by Stephan Raabe (2023) 
+ * ----------------------------------------------------- 
+*/
+
+/* -----------------------------------------------------
+ * Import Pywal colors 
+ * ----------------------------------------------------- */
+/* @import 'style-light.css'; */
+
+
+@import '../../../../.cache/wal/colors-waybar.css';
+
+
+
+@define-color backgroundlight @color5;
+@define-color backgrounddark @color11;
+@define-color workspacesbackground1 @color5;
+@define-color workspacesbackground2 @color11;
+@define-color bordercolor @color11;
+@define-color textcolor1 #FFFFFF;
+@define-color textcolor2 #FFFFFF;
+@define-color textcolor3 #FFFFFF;
+@define-color iconcolor #FFFFFF;
+
+/*
+@define-color backgroundlight #FFFFFF;
+@define-color backgrounddark #FFFFFF;
+@define-color workspacesbackground1 #FFFFFF;
+@define-color workspacesbackground2 #CCCCCC;
+@define-color bordercolor #FFFFFF;
+@define-color textcolor1 #000000;
+@define-color textcolor2 #000000;
+@define-color textcolor3 #FFFFFF;
+@define-color iconcolor #FFFFFF;
+*/
+
+
+
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+
+
+* {
+    font-family: "Fira Sans semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
+    min-height: 0px;
+    /* margin-bottom: 1px; */
+    margin: 1px 0px 1px 0px;
+    
+}
+
+window#waybar {
+    /* background-color: rgba(40, 40, 43,1.0); */
+    background-color: rgba(0,0,0,0.0);
+    /* backdrop-filter: blur(10px); */
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 0px;
+    
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+ #workspaces {
+    margin: 8px 10px 3px 10px;
+    color: @textcolor1;
+    background-color:rgba(40, 40, 43,1.0);
+    border-radius:40px;
+    padding:3px;
+    
+    
+}
+
+
+
+#workspaces button  {
+    border-radius:1000px;
+    border: solid 0.1px @color0;
+    padding: 0px 1px;
+    margin: 5px 5px;
+    color: @textcolor3;
+    background:@color3;
+    opacity:1.0;
+}
+
+#workspaces button.empty{
+    background-color: @color0;
+    opacity:0.4;
+}
+
+
+#workspaces button:hover{
+    background:@color7;
+    opacity:0.75;
+}
+
+
+#workspaces button.active{
+    background:@color7;
+    opacity:1.0;
+}
+
+
+
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 10px;
+    background-color: @backgroundlight;
+    opacity:0.8;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @textcolor2;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    margin: 0px 0px 0px 0px;
+    border-radius: 12px;
+    color:@textcolor;
+    font-size:14px;
+    font-weight:normal;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+
+.modules-right{
+    background-color:rgba(40, 40, 43,1.0);
+    /* border-radius:20px; */
+    padding:0px 10px;
+    margin-bottom:1px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+
+    
+}
+
+.modules-left{
+    /* background:rgba(0,0,0,0.0); */
+    /* border-radius:40px; */
+    padding: 0px 0px;
+    margin-bottom:1px;
+    background-color:rgba(40, 40, 43,1.0);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+}
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+
+#custom-workspace,
+#backlight,
+#custom-brave, 
+#custom-browser, 
+#custom-keybindings, 
+#custom-outlook, 
+#custom-filemanager, 
+#custom-teams, 
+#custom-chatgpt, 
+#custom-calculator, 
+#custom-windowsvm, 
+#custom-cliphist, 
+#custom-wallpaper, 
+#custom-settings, 
+#custom-wallpaper, 
+#custom-system,
+#custom-waybarthemes {
+    margin-right: 0px;
+    font-size: 12px;
+    font-weight: bold;
+    color: @iconcolor;
+}
+
+#custom-settings,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
+#custom-exit,
+#battery,
+#clock{
+    margin: 0px 5px 0px 0px;
+}
+
+#custom-settings {
+    /* margin: 7px 0px 7px 0px; */
+    padding: 0px 14px 0px 9px;
+    color:@color6;
+    border-radius: 200px;
+    /* background-color: @color6; */
+    margin-right: 5px;
+}
+
+#custom-browser {
+    margin-right: 16px;
+}
+
+#custom-wallpaper {
+    margin-right: 14px;
+}
+
+#custom-chatgpt {
+    margin-right: 10px;
+    background-image: url("../assets/ai-icon-20.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 23px;
+}
+
+#custom-waybarthemes,#custom-system {
+    margin-right:15px;
+}
+
+
+#custom-ml4w-welcome {
+    margin-right: 15px;
+    background-image: url("../assets/ml4w-icon-20.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 24px;
+}
+
+#custom-ml4w-hyprland-settings {
+    margin-right: 12px;
+    background-image: url("../assets/hyprland-icon-20.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 16px;
+}
+
+
+/* -----------------------------------------------------
+ * Idle Inhibator
+ * ----------------------------------------------------- */
+
+ #idle_inhibitor {
+    margin-right: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: @iconcolor;
+}
+
+#idle_inhibitor.activated {
+    margin-right: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #dc2f2f;
+}
+
+/* -----------------------------------------------------
+ * Custom Modules
+ * ----------------------------------------------------- */
+
+#custom-appmenuicon {
+    font-size: 20px;
+    color: @textcolor;
+    margin: 0px 15px 0px 10px;
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+#custom-exit {
+    /* margin: 7px 0px 7px 0px; */
+    padding: 0px 15px 0px 12px;
+    /* font-size:14px; */
+    /* background-color: @color3; */
+    /*background-color: #9e2a2b;*/
+    border-radius: 400px;
+    color:@color3;
+    
+}
+
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
+
+#backlight {
+    font-size: 14px;
+    color: @color4;
+    border-radius: 15px;
+    /* margin: 7px 5px 7px 0px; */
+    padding: 0px 10px 0px 0px;
+    /* background-color:@color4; */
+}
+
+#custom-updates.green {
+}
+
+
+#custom-updates.yellow {
+    color: #ff9a3c;
+}
+
+#custom-updates.red {
+    color: #dc2f2f;
+}
+
+/* -----------------------------------------------------
+ * Custom Youtube
+ * ----------------------------------------------------- */
+
+#custom-youtube {
+    background-color: @backgroundlight;
+    font-size: 14px;
+    color: @textcolor2;
+    border-radius: 15px;
+    margin: 0px 15px 0px 0px;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+ #disk,#memory,#cpu,#language {
+    margin:0px;
+    padding:0px;
+    font-size:14px;
+    color:@iconcolor;
+}
+
+#language {
+    margin-right:10px;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    /* background-color: @color0; */
+    border-radius:200px;
+    padding: 0px 17.5px;
+    font-size: 15px;
+    color: #ffffff;
+    /* margin: 0px 0px 0px 0px; */
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+    font-size: 14px;
+    color: @color4;
+    border-radius: 15px;
+
+    /* margin: 7px 10px 7px 0px; */
+    padding: 0px 5px 0px 5px;
+
+    /* background-color:@color2; */
+}
+
+#pulseaudio.muted {
+    color: @color1;
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+    font-size: 14px;
+    color: @color4;
+    border-radius: 15px;
+    /* margin: 7px 0px 7px 0px; */
+    padding: 0px 5px 0px 10px;
+    border-radius:200px;
+    /*background-color:#335c67;*/
+    /* background-color:@color9; */
+}
+
+#network.ethernet {
+    color: @textcolor;
+}
+
+#network.wifi {
+    color: @color4;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+ #bluetooth, #bluetooth.on, #bluetooth.connected {
+    font-size: 14px;
+    color: @textcolor;
+    border-radius: 15px;
+    /* margin: 10px 0px 10px 0px; */
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+    /* font-size: 14px; */
+    color: @color6;
+    border-radius: 15px;
+    /*margin: 10px 15px 10px 0px;*/
+
+    /* background-color:@color8; */
+
+    /* margin: 10px 0px 10px 0px; */
+    padding: 0px 0px 0px 0px;
+}
+
+#battery.charging, #battery.plugged {
+    color: @color4;
+}
+
+@keyframes blink {
+    to {
+        /*background-color: @color1;*/
+        color: @color0
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    margin:0px 10px 0px 0px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* -----------------------------------------------------
+ * Other
+ * ----------------------------------------------------- */
+
+label:focus {
+    background-color: #000000;
+}
+
+
+#custom-workspace{
+    color:@color3;
+    font-size: 16px;
+
+    /* background-color: @color3; */
+    border-radius:40px;
+    
+    margin: 7px 0px;
+    padding: 0px 10px;
+}

@@ -1,0 +1,101 @@
+{
+    "layer" : "top",
+    "spacing" : 4,
+
+    "modules-left":["hyprland/workspaces"],
+    "modules-center":["custom/clock"],
+    "modules-right":["cpu","backlight","pulseaudio","network", "battery"],
+
+    "custom/clock" : {
+        "exec": "date '+%H:%M'",
+        "format-alt":"date '+%d+%m+%Y'",
+        "interval":1
+    },
+
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip":"{}"
+        
+    },
+    "memory": {
+        "format": "{}%"
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ]
+        },
+        "interval": 5,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": "{time}"
+    },
+    "network": {
+        "format-wifi": "{icon}",
+        "format-disconnected": "󰤭",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "on-click": "nm-connection-editor",
+        "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
+        "format-ethernet": "󰀂",
+        "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "nospacing": 1,
+        "interval": 5
+    },
+    "pulseaudio": {
+        "format": "{volume}% 271393{icon}",
+        "format-bluetooth": "{icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "tooltip":"{volume}%"
+    }
+}

@@ -1,0 +1,5 @@
+[Default]
+early_exit = true
+save_dir = $HOME/Pictures/Screenshots
+save_filename_format = screenshot-%H:%M:%S-%d-%m.png
+
