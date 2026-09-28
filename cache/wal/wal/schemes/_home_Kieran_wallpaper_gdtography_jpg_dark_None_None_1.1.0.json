@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/gdtography.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#404040",
+        "foreground": "#f2f2f2",
+        "cursor": "#f2f2f2"
+    },
+    "colors": {
+        "color0": "#404040",
+        "color1": "#DADADA",
+        "color2": "#DEDEDE",
+        "color3": "#E1E1E1",
+        "color4": "#E5E5E5",
+        "color5": "#ECECEC",
+        "color6": "#F2F2F2",
+        "color7": "#f2f2f2",
+        "color8": "#a9a9a9",
+        "color9": "#DADADA",
+        "color10": "#DEDEDE",
+        "color11": "#E1E1E1",
+        "color12": "#E5E5E5",
+        "color13": "#ECECEC",
+        "color14": "#F2F2F2",
+        "color15": "#f2f2f2"
+    }
+}

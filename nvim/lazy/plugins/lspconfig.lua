@@ -1,5 +1,5 @@
 local script_path = debug.getinfo(1, "S").source:sub(2) -- Remove '@' from the path
-local script_dir = script_path:match("(.*/)")           -- Extract directory
+local script_dir = script_path:match("(.*/)") -- Extract directory
 
 -- Load languages.lua from the same directory
 local langs = dofile(script_dir .. "languages/languages.lua")
@@ -32,12 +32,27 @@ return {
 
 			for _, server in ipairs(langs.getAllLanguageNames) do
 				if server ~= "lua_ls" then
-					lspconfig[server].setup({
-						capabilities = capabilities,
-					})
+					if server ~= "pyright" then
+						lspconfig[server].setup({
+							capabilities = capabilities,
+						})
+					end
 				end
 			end
-
+			lspconfig.pyright.setup({
+				settings = {
+					pyright = {
+						reportMissingTypeStubs = false,
+						reportMissingImports = false,
+						reportGeneralTypeIssues = false,
+						reportUnknownMemberType = false,
+						reportUnknownVariableType = false,
+						reportUnknownParameterType = false,
+						reportUnknownArgumentType = false,
+					},
+					capabilities = capabilities,
+				},
+			})
 			--Lua set up
 			lspconfig.lua_ls.setup({
 
@@ -73,8 +88,9 @@ return {
 			})
 
 			-- Vim keymaps for lSPs
-			vim.keymap.set("n", "<Leader>d", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n" }, "<Leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<Leader>cd", vim.lsp.buf.definition, { desc = "[d]efinition" })
+			vim.keymap.set({ "n" }, "<Leader>ca", vim.lsp.buf.code_action, { desc = "[c]ode [a]ctions" })
+			vim.keymap.set("n", "<Leader>r", vim.lsp.buf.rename, { desc = "[r]ename" })
 		end,
 	},
 	{

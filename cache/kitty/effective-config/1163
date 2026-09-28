@@ -1,0 +1,25 @@
+foreground   #D2A2D3
+background   #00050C
+cursor       #D2A2D3
+color0       #00050C
+color1        #ef476f
+color2        #06d6a0
+color3       #215598
+color4       #5C5E9F
+color5       #7A6B9B
+color6       #A971AE
+color7       #D2A2D3
+color8       #666666
+color9       #5A3757
+color10       #143F84
+color11       #215598
+color12       #5C5E9F
+color13       #7A6B9B
+color14       #A971AE
+color15       #D2A2D3
+font_size 18
+font_family      family="Illinois Mono Regular"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+map ctrl+f launch --type=window bash -c 'fzf_cd && printf "\n" > /dev/tty'

@@ -13,8 +13,10 @@ local Language = dofile(script_dir .. "languageStructure.lua")
 local languages = {
 	Language:new("lua_ls", "stylua"),
 	Language:new("clangd", "clang_format"),
-	Language:new("jdtls", "google_java_format", "checkstyle"),
+	Language:new("jdtls", "checkstyle"),
+	Language:new("pyright", "black"),
 	-- Language:new("lean-language-server"),
+	Language:new("ts_ls", "prettier", "ts-standard"),
 }
 
 -- Function to return all language names

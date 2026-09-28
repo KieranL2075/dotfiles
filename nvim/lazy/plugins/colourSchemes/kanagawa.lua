@@ -4,8 +4,8 @@ return {
 	priority = 1000,
 	config = function()
 		local kan = require("kanagawa")
-		local theme = "dragon"
-		vim.g.kanagawa_contrast = "high" -- You can also set it to "medium" or "low"
+		local theme = "wave"
+		vim.g.kanagawa_contrast = "medium" -- You can also set it to "medium" or "low"
 		kan.setup({
 			compile = false, -- enable compiling the colorscheme
 			undercurl = true, -- enable undercurls

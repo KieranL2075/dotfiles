@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/spaceship-start.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#020F19",
+        "foreground": "#d8b5ac",
+        "cursor": "#d8b5ac"
+    },
+    "colors": {
+        "color0": "#020F19",
+        "color1": "#344553",
+        "color2": "#4E5157",
+        "color3": "#685A59",
+        "color4": "#72625F",
+        "color5": "#776461",
+        "color6": "#8A6A61",
+        "color7": "#d8b5ac",
+        "color8": "#977e78",
+        "color9": "#344553",
+        "color10": "#4E5157",
+        "color11": "#685A59",
+        "color12": "#72625F",
+        "color13": "#776461",
+        "color14": "#8A6A61",
+        "color15": "#d8b5ac"
+    }
+}

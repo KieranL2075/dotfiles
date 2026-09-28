@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/Kieran/wallpaper/apple-light.jpg"
+let background = "#0B1118"
+let foreground = "#e1cec2"
+let cursor     = "#e1cec2"
+
+" Colors
+let color0  = "#0B1118"
+let color1  = "#5E535B"
+let color2  = "#A56046"
+let color3  = "#9A6C60"
+let color4  = "#B7866C"
+let color5  = "#D29674"
+let color6  = "#777285"
+let color7  = "#e1cec2"
+let color8  = "#9d9087"
+let color9  = "#5E535B"
+let color10 = "#A56046"
+let color11 = "#9A6C60"
+let color12 = "#B7866C"
+let color13 = "#D29674"
+let color14 = "#777285"
+let color15 = "#e1cec2"

@@ -1,8 +1,7 @@
 -- Run setup.vim for vim setup
 --[[
---
 
-local currentFile = debug.getinfo(1,"S").source:sub(2)
+linit.luaocal currentFile = debug.getinfo(1,"S").source:sub(2)
 local currentDir = currentFile:match("(.*/)")
 
 vim.cmd('source'..currentDir..'setup.vim')
@@ -14,9 +13,9 @@ vim.cmd('source'..currentDir..'setup.vim')
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.o.foldmethod = "indent"
 vim.g.have_nerd_font = true
 -- Make line numbers default
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -86,6 +85,7 @@ vim.opt.softtabstop = 4 -- Default soft tab stop (in spaces)
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
+
 vim.keymap.set("n", "-", "<cmd>foldclose<CR>", { desc = "Close fold" })
 vim.keymap.set("n", "=", "<cmd>foldopen<CR>", { desc = "Open fold" })
 vim.keymap.set("n", "_", "zM", { desc = "Close all folds" })
@@ -94,8 +94,12 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("i", "kk", "<Esc>")
-vim.keymap.set("n", "H", "Hzz")
-vim.keymap.set("n", "L", "Lzz")
+vim.keymap.set("n", "J", "Lzz")
+vim.keymap.set("n", "K", "Hzz")
+vim.keymap.set("n", "H", "0")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("v", "H", "0")
+vim.keymap.set("v", "L", "$")
 vim.keymap.set("n", "Q", "<C-w><C-v>")
 vim.keymap.set("n", "<C-x>", "<C-w><C-q>")
 vim.keymap.set("n", "<A-k>", "<C-w><C->>")
@@ -103,12 +107,34 @@ vim.keymap.set("n", "<A-j>", "<C-w><C-<>")
 vim.keymap.set("i", '"', '""<Esc>i')
 vim.keymap.set("i", "(", "()<Esc>i")
 vim.keymap.set("i", "{", "{}<Esc>i")
+vim.keymap.set("i", "<CR>", function()
+  local line = vim.api.nvim_get_current_line()
+  local col = vim.api.nvim_win_get_cursor(0)[2] + 1 -- Adjust for 1-based indexing
+
+  -- Define matching pairs
+  local pairs = {
+    ["{"] = "}",
+    ["("] = ")",
+    ["["] = "]",
+  }
+
+  -- Get current and next character
+  local before = line:sub(col - 1, col - 1)
+  local after = line:sub(col, col)
+
+  -- Check if the cursor is inside any bracket pair
+  if pairs[before] == after then
+    return "<CR><Esc>O"
+  else
+    return "<CR>"
+  end
+end, { expr = true })
 vim.keymap.set("i", "[", "[]<Esc>i")
 vim.keymap.set("i", "<", "<><Esc>i")
 vim.keymap.set("i", "'", "''<Esc>i")
 vim.keymap.set("n", "<Leader>g", ":Neogit cwd=%:p:h<CR>")
-vim.keymap.set("n", "<M-x>", "gcc", { remap = true, desc = "Toggle comment (gcc) with Alt+X" })
-vim.keymap.set("x", "<M-x>", "gc", { remap = true, desc = "Toggle comment on selected lines" })
+vim.keymap.set("n", "<C-/>", "gcc", { remap = true, desc = "Toggle comment (gcc) with Alt+X" })
+vim.keymap.set("x", "<C-/>", "gc", { remap = true, desc = "Toggle comment on selected lines" })
 vim.keymap.set("n", "<Leader>T", function()
   -- Set the VIM_DIR environment variable to the current file's directory
   vim.fn.setenv("VIM_DIR", vim.fn.expand("%:p:h"))
@@ -155,6 +181,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+vim.keymap.set("n", "<C-s>", ":vsplit<CR>", { desc = "Duplicate Window into Virtical split" })
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
@@ -170,8 +197,9 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
-vim.keymap.set("n", "<Leader>e", ":Neotree toggle<CR>", {})
+-- vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+vim.keymap.set("n", "<Leader><CR>", ":Neotree toggle float<CR>", {})
+vim.keymap.set("n", "<Leader><tab>", ":Neotree toggle left<CR>", {})
 -- LSP keybinds
 
 -- [[ Basic Autocommands ]]

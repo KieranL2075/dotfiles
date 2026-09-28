@@ -24,7 +24,39 @@ return {
 		--
 		-- false by default, true to enable
 		mappings = false,
-
+		on_attach = function(client, bufnr)
+			vim.api.nvim_set_keymap("n", "<LocalLeader>i", ":LeanInfoviewToggle<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<LocalLeader>p", ":LeanPauseInfoview<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<LocalLeader>r", ":LeanRestartServer<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<LocalLeader>v",
+				":LeanConfigureInfoview<CR>",
+				{ noremap = true, silent = true }
+			)
+			vim.api.nvim_set_keymap("n", "<LocalLeader>x", ":LeanPinInfoview<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<LocalLeader>c", ":LeanClearPins<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<LocalLeader>dx", ":LeanPinDiff<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "<LocalLeader>dc", ":LeanClearDiffPin<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<LocalLeader>dd",
+				":LeanToggleAutoDiffPin<CR>",
+				{ noremap = true, silent = true }
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<LocalLeader>dt",
+				":LeanToggleAutoDiffPinWithoutClear<CR>",
+				{ noremap = true, silent = true }
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<LocalLeader>sy",
+				":LeanShowAbbreviation<CR>",
+				{ noremap = true, silent = true }
+			)
+		end,
 		-- Enable the Lean language server(s)?
 		--
 		-- false to disable, otherwise should be a table of options to pass to `leanls`

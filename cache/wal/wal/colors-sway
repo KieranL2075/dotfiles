@@ -1,0 +1,21 @@
+set $wallpaper /home/Kieran/wallpaper/apple-light.jpg
+
+set $background #0B1118
+set $foreground #e1cec2
+
+set $color0 #0B1118
+set $color1 #5E535B
+set $color2 #A56046
+set $color3 #9A6C60
+set $color4 #B7866C
+set $color5 #D29674
+set $color6 #777285
+set $color7 #e1cec2
+set $color8 #9d9087
+set $color9 #5E535B
+set $color10 #A56046
+set $color11 #9A6C60
+set $color12 #B7866C
+set $color13 #D29674
+set $color14 #777285
+set $color15 #e1cec2

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/miracleOS_dark.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0d030c",
+        "foreground": "#f1acf4",
+        "cursor": "#f1acf4"
+    },
+    "colors": {
+        "color0": "#0d030c",
+        "color1": "#9B0E1D",
+        "color2": "#D62D47",
+        "color3": "#FF817F",
+        "color4": "#361090",
+        "color5": "#5815A9",
+        "color6": "#D449B3",
+        "color7": "#f1acf4",
+        "color8": "#a878aa",
+        "color9": "#9B0E1D",
+        "color10": "#D62D47",
+        "color11": "#FF817F",
+        "color12": "#361090",
+        "color13": "#5815A9",
+        "color14": "#D449B3",
+        "color15": "#f1acf4"
+    }
+}

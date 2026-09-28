@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/aesthetic_deer.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0a13",
+        "foreground": "#eb98ad",
+        "cursor": "#eb98ad"
+    },
+    "colors": {
+        "color0": "#0a0a13",
+        "color1": "#55375F",
+        "color2": "#464568",
+        "color3": "#933A51",
+        "color4": "#AF3956",
+        "color5": "#D93A62",
+        "color6": "#824679",
+        "color7": "#eb98ad",
+        "color8": "#a46a79",
+        "color9": "#55375F",
+        "color10": "#464568",
+        "color11": "#933A51",
+        "color12": "#AF3956",
+        "color13": "#D93A62",
+        "color14": "#824679",
+        "color15": "#eb98ad"
+    }
+}

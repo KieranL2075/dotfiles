@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/neon_office.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#231928",
+        "foreground": "#d2d8eb",
+        "cursor": "#d2d8eb"
+    },
+    "colors": {
+        "color0": "#231928",
+        "color1": "#B075C0",
+        "color2": "#6B87BB",
+        "color3": "#7490D0",
+        "color4": "#A48EB9",
+        "color5": "#A29EE1",
+        "color6": "#D3ABE3",
+        "color7": "#d2d8eb",
+        "color8": "#9397a4",
+        "color9": "#B075C0",
+        "color10": "#6B87BB",
+        "color11": "#7490D0",
+        "color12": "#A48EB9",
+        "color13": "#A29EE1",
+        "color14": "#D3ABE3",
+        "color15": "#d2d8eb"
+    }
+}

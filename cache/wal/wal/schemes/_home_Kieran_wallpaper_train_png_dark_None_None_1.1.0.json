@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/train.png",
+    "alpha": "100",
+    "special": {
+        "background": "#111212",
+        "foreground": "#e2c9a2",
+        "cursor": "#e2c9a2"
+    },
+    "colors": {
+        "color0": "#111212",
+        "color1": "#654C33",
+        "color2": "#6C5A49",
+        "color3": "#9F3022",
+        "color4": "#C64E34",
+        "color5": "#98704D",
+        "color6": "#688B72",
+        "color7": "#e2c9a2",
+        "color8": "#9e8c71",
+        "color9": "#654C33",
+        "color10": "#6C5A49",
+        "color11": "#9F3022",
+        "color12": "#C64E34",
+        "color13": "#98704D",
+        "color14": "#688B72",
+        "color15": "#e2c9a2"
+    }
+}

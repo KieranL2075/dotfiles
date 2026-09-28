@@ -7,5 +7,4 @@ local colour_dir = script_dir .. "colourSchemes/"
 local colourScheme = "kanagawa"
 
 local file = colour_dir .. colourScheme .. ".lua"
-print(file)
 return dofile(file)

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/nordwall2.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1a1e25",
+        "foreground": "#ecdcbd",
+        "cursor": "#ecdcbd"
+    },
+    "colors": {
+        "color0": "#1a1e25",
+        "color1": "#A99778",
+        "color2": "#D08870",
+        "color3": "#5A7598",
+        "color4": "#90768E",
+        "color5": "#6486AD",
+        "color6": "#7DA2C2",
+        "color7": "#ecdcbd",
+        "color8": "#a59a84",
+        "color9": "#A99778",
+        "color10": "#D08870",
+        "color11": "#5A7598",
+        "color12": "#90768E",
+        "color13": "#6486AD",
+        "color14": "#7DA2C2",
+        "color15": "#ecdcbd"
+    }
+}

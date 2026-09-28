@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/tron_legacy4.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#091418",
+        "foreground": "#c6f0f1",
+        "cursor": "#c6f0f1"
+    },
+    "colors": {
+        "color0": "#091418",
+        "color1": "#325A65",
+        "color2": "#24636E",
+        "color3": "#466D76",
+        "color4": "#35817E",
+        "color5": "#347985",
+        "color6": "#4CAFB5",
+        "color7": "#c6f0f1",
+        "color8": "#8aa8a8",
+        "color9": "#325A65",
+        "color10": "#24636E",
+        "color11": "#466D76",
+        "color12": "#35817E",
+        "color13": "#347985",
+        "color14": "#4CAFB5",
+        "color15": "#c6f0f1"
+    }
+}

@@ -27,7 +27,6 @@
     "modules-left": [
         
         "custom/workspace",
-        "custom/minimise"
         
     ],
     

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/Kieran/wallpaper/honkadaloonga.png",
+    "alpha": "100",
+    "special": {
+        "background": "#0b070b",
+        "foreground": "#808dc3",
+        "cursor": "#808dc3"
+    },
+    "colors": {
+        "color0": "#0b070b",
+        "color1": "#08B54F",
+        "color2": "#09A369",
+        "color3": "#0BE387",
+        "color4": "#0DAB6F",
+        "color5": "#0E7F6A",
+        "color6": "#1AB27F",
+        "color7": "#808dc3",
+        "color8": "#596288",
+        "color9": "#08B54F",
+        "color10": "#09A369",
+        "color11": "#0BE387",
+        "color12": "#0DAB6F",
+        "color13": "#0E7F6A",
+        "color14": "#1AB27F",
+        "color15": "#808dc3"
+    }
+}
