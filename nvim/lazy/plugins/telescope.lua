@@ -55,6 +55,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			-- [[ Configure Telescope ]]
 			-- See `:help telescope` and `:help telescope.setup()`
 			require("telescope").setup({
+				defaults = {
+					preview = {
+						treesitter = false,
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),

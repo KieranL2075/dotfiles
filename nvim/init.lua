@@ -28,7 +28,7 @@ vim.opt.guifont = "Inter:h14"
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = "unnamedplus"
 end)
 -- Enable break indent
 vim.opt.breakindent = true
@@ -59,11 +59,11 @@ vim.opt.list = true
 
 local space = " "
 vim.opt.listchars:append({
-  tab = "│" .. space,
-  multispace = space,
-  lead = " ",
-  trail = space,
-  nbsp = space,
+	tab = "│" .. space,
+	multispace = space,
+	lead = " ",
+	trail = space,
+	nbsp = space,
 })
 -- vim.opt.listchars = { tab = "|", trail = "·", nbsp = "␣" }
 
@@ -76,8 +76,8 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 12
 
-vim.opt.tabstop = 4     -- Default tab width (in spaces)
-vim.opt.shiftwidth = 4  -- Default indentation width (in spaces)
+vim.opt.tabstop = 4 -- Default tab width (in spaces)
+vim.opt.shiftwidth = 4 -- Default indentation width (in spaces)
 vim.opt.softtabstop = 4 -- Default soft tab stop (in spaces)
 
 -- [[ Basic Keymaps ]]
@@ -108,26 +108,26 @@ vim.keymap.set("i", '"', '""<Esc>i')
 vim.keymap.set("i", "(", "()<Esc>i")
 vim.keymap.set("i", "{", "{}<Esc>i")
 vim.keymap.set("i", "<CR>", function()
-  local line = vim.api.nvim_get_current_line()
-  local col = vim.api.nvim_win_get_cursor(0)[2] + 1 -- Adjust for 1-based indexing
+	local line = vim.api.nvim_get_current_line()
+	local col = vim.api.nvim_win_get_cursor(0)[2] + 1 -- Adjust for 1-based indexing
 
-  -- Define matching pairs
-  local pairs = {
-    ["{"] = "}",
-    ["("] = ")",
-    ["["] = "]",
-  }
+	-- Define matching pairs
+	local pairs = {
+		["{"] = "}",
+		["("] = ")",
+		["["] = "]",
+	}
 
-  -- Get current and next character
-  local before = line:sub(col - 1, col - 1)
-  local after = line:sub(col, col)
+	-- Get current and next character
+	local before = line:sub(col - 1, col - 1)
+	local after = line:sub(col, col)
 
-  -- Check if the cursor is inside any bracket pair
-  if pairs[before] == after then
-    return "<CR><Esc>O"
-  else
-    return "<CR>"
-  end
+	-- Check if the cursor is inside any bracket pair
+	if pairs[before] == after then
+		return "<CR><Esc>O"
+	else
+		return "<CR>"
+	end
 end, { expr = true })
 vim.keymap.set("i", "[", "[]<Esc>i")
 vim.keymap.set("i", "<", "<><Esc>i")
@@ -136,42 +136,42 @@ vim.keymap.set("n", "<Leader>g", ":Neogit cwd=%:p:h<CR>")
 vim.keymap.set("n", "<C-/>", "gcc", { remap = true, desc = "Toggle comment (gcc) with Alt+X" })
 vim.keymap.set("x", "<C-/>", "gc", { remap = true, desc = "Toggle comment on selected lines" })
 vim.keymap.set("n", "<Leader>T", function()
-  -- Set the VIM_DIR environment variable to the current file's directory
-  vim.fn.setenv("VIM_DIR", vim.fn.expand("%:p:h"))
-  print(vim.fn.getenv("VIM_DIR"))
-  -- Open a terminal and change to the VIM_DIR directory
-  vim.cmd("terminal")
-  vim.fn.chdir(vim.fn.getenv("VIM_DIR"))
+	-- Set the VIM_DIR environment variable to the current file's directory
+	vim.fn.setenv("VIM_DIR", vim.fn.expand("%:p:h"))
+	print(vim.fn.getenv("VIM_DIR"))
+	-- Open a terminal and change to the VIM_DIR directory
+	vim.cmd("terminal")
+	vim.fn.chdir(vim.fn.getenv("VIM_DIR"))
 end, { desc = "Open terminal in current file's directory" })
 
 -- Map 'i' to print the current line number and then behave like the normal 'i'
 vim.keymap.set("n", "I", function()
-  local line_number = vim.fn.line(".")
-  local lineContents = vim.fn.getline(line_number)
-  local line_prev
-  for x = 1, line_number do
-    line_prev = vim.fn.getline(line_number - x)
-    if line_prev ~= "" then
-      break
-    end
-  end
-  local leading_tabs = line_prev:match("^(\t*)") -- Match leading tabs at the start of the line
-  -- Simulate pressing 'i' to enter insert mode
-  vim.api.nvim_feedkeys("I", "n", true)
-  if lineContents == "" then
-    for _ = 1, #leading_tabs do
-      vim.api.nvim_feedkeys("\t", "n", true) -- Simulate a tab press to move the cursor
-    end
-  else
-    -- Simulate moving the cursor by the number of leading tabs (tab_count)
-    local current_cursor = vim.api.nvim_win_get_cursor(0) -- Get current cursor position (row, col)
-    -- Move the cursor by the number of leading tabs (tab_count)
-    vim.api.nvim_win_set_cursor(0, { current_cursor[1], current_cursor[2] + #leading_tabs })
-  end
+	local line_number = vim.fn.line(".")
+	local lineContents = vim.fn.getline(line_number)
+	local line_prev
+	for x = 1, line_number do
+		line_prev = vim.fn.getline(line_number - x)
+		if line_prev ~= "" then
+			break
+		end
+	end
+	local leading_tabs = line_prev:match("^(\t*)") -- Match leading tabs at the start of the line
+	-- Simulate pressing 'i' to enter insert mode
+	vim.api.nvim_feedkeys("I", "n", true)
+	if lineContents == "" then
+		for _ = 1, #leading_tabs do
+			vim.api.nvim_feedkeys("\t", "n", true) -- Simulate a tab press to move the cursor
+		end
+	else
+		-- Simulate moving the cursor by the number of leading tabs (tab_count)
+		local current_cursor = vim.api.nvim_win_get_cursor(0) -- Get current cursor position (row, col)
+		-- Move the cursor by the number of leading tabs (tab_count)
+		vim.api.nvim_win_set_cursor(0, { current_cursor[1], current_cursor[2] + #leading_tabs })
+	end
 end)
 
 vim.keymap.set("n", "i", "i")
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>F", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -180,6 +180,8 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+vim.keymap.set("n", "<leader>q", ":split term://$SHELL<CR>", { desc = "Split Terminal horizontally" })
 
 vim.keymap.set("n", "<C-s>", ":vsplit<CR>", { desc = "Duplicate Window into Virtical split" })
 -- TIP: Disable arrow keys in normal mode
@@ -209,14 +211,14 @@ vim.keymap.set("n", "<Leader><tab>", ":Neotree toggle left<CR>", {})
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 vim.api.nvim_create_autocmd("VimLeavePre", {
-  command = "silent !rm -f ~/.local/state/nvim/swap/*.swp",
+	command = "silent !rm -f ~/.local/state/nvim/swap/*.swp",
 })
 
 local lazy_dir = vim.fn.expand("~/dotfiles/nvim/lazy/")
