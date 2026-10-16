@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the output CSS file
-output_css="/home/Kieran/.cache/wal/colors-waybar.css"
-output_kitty="/home/Kieran/.cache/wal/colors-kitty.conf"
+output_css="$HOME/.cache/wal/colors-waybar.css"
+output_kitty="$HOME/.cache/wal/colors-kitty.conf"
 
 # Run wal to generate the color palette (optional, if already run, comment this line)
 # wal -i "$1"
